@@ -12,6 +12,11 @@ delete(id) {
 
 create(item) {
     return knex('items').insert(item, '*');
+},
+
+update(id, item) {
+  return knex('items').where('id', id).update(item, '*')
 }
+
 
 };

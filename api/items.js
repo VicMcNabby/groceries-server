@@ -27,4 +27,11 @@ router.post('/', function(req, res, next) {
     res.json(result);
   });
 });
+
+router.put('/:id', (req, res, next) => {
+    queries.update(req.params.id, req.body).then(item => {
+      res.json(item[0])
+    })
+})
+
 module.exports = router
